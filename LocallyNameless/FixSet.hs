@@ -12,4 +12,4 @@ fixSet m xs = execState (fixSet' $ Set.toList xs) Set.empty
           seen <- get
           when (y `Set.notMember` seen) $ do
             modify $ Set.insert y
-            fixSet' $ ys ++ Set.toList (m y)
+          fixSet' $ ys ++ Set.toList (m y)
